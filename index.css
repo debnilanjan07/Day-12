@@ -1,0 +1,145 @@
+/*Revise the concepts covered in last week : 
+
+Q 1 : Explain absolute and relative position by using example and with words as well
+Q 2 : Explain the difference between fixed and sticky
+Q 3 : Arrange 5 boxes in alternate manner ,
+ first box on left of screen , second on right of screen and so on
+Q 4 : Create a infinte jumping ball using animation 
+Q 5 : Bring five cards in a row on full screen , if screen size
+ is 360 px then bring the boxes in column , by using media queries
+*/
+.positionContainer {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.relative {
+    position: relative;
+    top: 175px;
+    left: 170px;
+    width: 40%;
+
+    background-color: rgb(7, 173, 54);
+
+}
+
+.absolute {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    background-color: rgb(116, 41, 4);
+    width: 40%;
+}
+
+
+
+.fixed {
+    position: fixed;
+    font-size: 11px;
+    top: 200px;
+    right: 20px;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(54, 8, 53);
+}
+
+.static {
+    position: static;
+    top: 40px;
+    left: 20px;
+    width: 40%;
+    background-color: rgb(0, 78, 224);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.card {
+    background-color: yellow;
+    width: 98px;
+    height: 100px;
+}
+
+@media only screen and (min-width:360px) and (max-width:480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .card {
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+
+.static{
+    margin-top:-97px;
+}
+
+
+}
+.ballcon{
+    height: 300px;
+    width:300px;
+}
+
+.ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    animation-name: demo;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    background-color: red;
+    align-items:center;
+    justify-content: center;
+}
+
+@keyframes demo {
+    25% {
+        transform: translateY(60px);
+    }
+
+    50% {
+        transform: translateY(40px);
+
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+.box{
+ 
+    height:100px;
+    width:100px;
+
+}
+.first {
+    background-color: red;
+}
+.second{
+    background-color: blue;
+    float:right;
+}
+.third{
+    background-color: pink;
+    float:left;
+    clear:right ;
+}
+.fourth{
+    background-color:green;
+    float:right;
+    clear:left ;
+}
+.fifth{
+    background-color:yellow;
+    float: left;
+    clear:right;
+}
